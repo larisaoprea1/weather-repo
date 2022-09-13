@@ -1,0 +1,36 @@
+.title1{
+    font-size: 40px;
+    font-weight: 600;
+    background-image: linear-gradient(to left, #ffee30, #ff991d);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+.mybtn1{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.registerbtn1{
+    background-color: #ffee30;
+    border: 2px solid #ffee30;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    height: 40px;
+    color: black;
+    width: 30%;
+    margin-top: 20px;
+}
+.registerbtn1:focus{
+    background-color: #fdff77;
+    border: 2px solid #fdff77;
+}
+.imagediv1{
+    display: flex;
+    width: 40%;
+    background: url("../img/sunny.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}

@@ -1,0 +1,59 @@
+.all{
+    background-color: rgb(167, 211, 255);
+}
+.contentmain{
+    background-image: linear-gradient(to left, #0c025c, #0168e6);
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+   text-align: center;
+
+}
+.imgsun{
+    width: 400px;
+}
+
+.searchbtn{
+    background-color: #2f00b2;
+    border: 2px solid #2f00b2;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    height: 40px;
+    color: white;
+    width: 5%;
+    margin-left: 10px;
+    
+}
+.searchbtn:hover{
+    background-color: #2f00b2;
+    border: 2px solid #2f00b2;
+}
+.weather{
+    
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.navlogo{
+    text-decoration: none;
+    color: white;
+}
+.navlogo:hover{
+    color: #a180fd;
+}
+.logout{
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+.logout:hover{
+    color: #a180fd;
+}
+.searchbar{
+    width: 50%;
+}
+.loadingIndicator{
+    width: 20px;
+}

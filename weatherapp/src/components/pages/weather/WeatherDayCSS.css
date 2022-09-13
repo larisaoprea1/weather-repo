@@ -1,0 +1,19 @@
+.infomationweather{
+    display: flex;
+    flex-direction: column;
+    
+}
+.weatherim{
+    display: block;
+    width: 40%;
+   margin-left: auto;
+   margin-right: auto;
+}
+.tempc{
+    color: white;
+}
+.containercard{
+    display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 2fr));
+  grid-gap: 1rem;
+}

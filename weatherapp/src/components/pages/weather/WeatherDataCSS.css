@@ -1,0 +1,48 @@
+.weathercard{
+    font-size: x-large;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+
+}
+.cityweather{
+    margin-top: 25px;
+    color: white;
+}
+.imgw{
+    display: inline-block;
+    border-radius: 18px;
+    width:30%;
+}
+.imgdiv{
+    width: 400px;
+   
+}
+.name{
+    font-size: x-large;
+    color: white;
+    display: inline-block;
+}
+.daydata{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.weathercontainer{
+    background: url("../img/blue.png") no-repeat;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid black;
+    border-radius: 18px;
+    margin: 20px;
+    height: 350px;
+    padding: 40px;
+}
+.forecast{
+    margin-top: 10px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
