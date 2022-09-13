@@ -16,7 +16,7 @@ function WeatherPage(){
        handleFetch();
    },[])
 
-   const API_URL=`http://api.weatherapi.com/v1/forecast.json?key=f3ccb1cf28744fea8bd143806223107&q=${city}&days=6&aqi=yes&alerts=yes`;
+   const API_URL=`http://api.weatherapi.com/v1/forecast.json?key=374d3feab2fa479db0891350221309&q=${city}&days=6&aqi=yes&alerts=yes`;
    const handleFetch = async() =>{
       await fetch(API_URL)
        .then((response) => response.json())

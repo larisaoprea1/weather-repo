@@ -11,7 +11,7 @@ const SearchComp = ({onSearchCity}) => {
     }
     const loadOptions = async (citySearched, callback) =>{
         if (citySearched.length > 1) {
-        const data = fetch(`http://api.weatherapi.com/v1/search.json?key=f3ccb1cf28744fea8bd143806223107&q=${citySearched}`)
+        const data = fetch(`http://api.weatherapi.com/v1/search.json?key=374d3feab2fa479db0891350221309&q=${citySearched}`)
         .then( res => res.json())
         .then( res => {
             return {options: res.map(element => {

@@ -5,20 +5,20 @@ import "./LoginPageCss.css"
 
 function LoginPage(){
     const history = useNavigate();
-    const [email, setLoginEmail]= useState("");
+    const [username, setLoginUsername]= useState("");
     const [password, setLoginPassword]= useState("");
 
-    const onEmailLoginChange = e => setLoginEmail(e.target.value);
+    const onUsernameLoginChange = e => setLoginUsername(e.target.value);
     const onPasswordLoginChange = e => setLoginPassword(e.target.value);
 
     const handleLogin = e => {
         e.preventDefault();
         
         const Data ={
-            email: email,
+            username: username,
             password: password
         };
-        fetch("https://localhost:7226/login", {
+        fetch("https://localhost:7103/api/Authentication/login", {
       method: "POST",
       body: JSON.stringify(Data),
       headers: {
@@ -37,8 +37,8 @@ return(
         <form>
             <div className="container information">
                 
-                <input type="text" onChange={onEmailLoginChange} name="email" class="email" id="email" required autocomplete="off" />
-                 <label for="email"><span>Email:</span></label>
+                <input type="text" onChange={onUsernameLoginChange} name="email" class="email" id="email" required autocomplete="off" />
+                 <label for="email"><span>Username:</span></label>
 
                 <input type="password" onChange={onPasswordLoginChange} name="psw" class="psw" id="psw" required autocomplete="off" />
                 <label for="psw"><span>Password:</span></label>

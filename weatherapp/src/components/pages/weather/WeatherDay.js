@@ -9,7 +9,9 @@ function WeatherDay(props){
         return(
             <div key={data.id} className="daydata"> 
             <Card>
-            <Card.Header style={{backgroundColor:"#6d37ff"}}><div className="tempc">{props.getDayName(data.time)}: Max. Temperature:{data.max_temp}°C - Min. Temperature {data.min_temp}</div></Card.Header>
+            <Card.Header style={{backgroundColor:"#6d37ff"}}>
+                <div className="tempc">{props.getDayName(data.time)}: Max. Temp:{data.max_temp}°C - Min. Temp: {data.min_temp}°C</div>
+            </Card.Header>
                 <Card.Body>
                     <Card.Text>
                      <div className="infomationweather">
