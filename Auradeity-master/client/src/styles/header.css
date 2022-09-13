@@ -1,0 +1,19 @@
+nav {
+    background-color: #2c292a;
+    height: 35px;
+}
+
+.header-item {
+    margin: 5px;
+
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border: 2px dashed #f69c55;
+    color: white;
+    text-decoration: none;
+}
+
+.header-item:hover {
+    color: rgb(160, 157, 157);
+}
