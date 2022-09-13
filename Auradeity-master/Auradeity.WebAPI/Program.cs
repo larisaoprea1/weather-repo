@@ -9,13 +9,13 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
-
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<ApplicationDbContext>(options => { options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")); });
+builder.Services.AddDbContext<ApplicationDbContext>(options => { options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)); });
 
 builder.Services.AddScoped<IAuthenticationCommand, AuthenticationCommand>();
 builder.Services.AddScoped<IAuthenticationQuery, AuthenticationQuery>();
