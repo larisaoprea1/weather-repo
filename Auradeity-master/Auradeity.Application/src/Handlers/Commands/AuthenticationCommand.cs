@@ -36,7 +36,9 @@ namespace Auradeity.Application.Handlers {
                     Username = requestRegisterModel.Username.Trim().ToLower(),
                     Email = requestRegisterModel.Email.Trim().ToLower(),
                     HashPassword = hashPassword,
-                    KeyPassword = keyPassword
+                    KeyPassword = keyPassword,
+                    IsAdmin = requestRegisterModel.IsAdmin,
+
                 };
 
                 _applicationDbContext.Accounts.Add(accountEntity);

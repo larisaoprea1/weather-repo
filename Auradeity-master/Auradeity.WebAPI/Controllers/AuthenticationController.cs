@@ -29,13 +29,13 @@ namespace Auradeity.WebAPI.Controllers {
 
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] RequestLoginModel requestLoginModel) {
-            var token = await _authenticationQuery.LoginIfUserExists(requestLoginModel);
+            var loginModel = await _authenticationQuery.LoginIfUserExists(requestLoginModel);
 
-            if (string.IsNullOrEmpty(token)) {
+            if (loginModel==null) {
                 return NotFound();
             }
 
-            return Ok(token);
+            return Ok(loginModel);
         }
     }
 

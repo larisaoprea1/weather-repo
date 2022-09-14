@@ -1,6 +1,7 @@
 ﻿using Auradeity.Application.Contracts;
 using Auradeity.Application.Interfaces;
 using Auradeity.Domain.Models.Request;
+using Auradeity.Domain.src.Models.Response.Queries.Authentication;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualBasic;
 
@@ -15,17 +16,22 @@ namespace Auradeity.Application.Handlers {
             _jwtQueryService = jwtQueryService;
         }
 
-        public async Task<string> LoginIfUserExists(RequestLoginModel requestLoginModel) {
+        public async Task<ResponseLoginModel> LoginIfUserExists(RequestLoginModel requestLoginModel) {
             try {
                 var accountEntity = await _applicationDbContext.Accounts
                     .AsNoTracking()
                     .FirstOrDefaultAsync(entity => entity.Username == requestLoginModel.Username.Trim().ToLower());
 
                 if (accountEntity != null && IsPasswordCorrect(requestLoginModel.Password, accountEntity.KeyPassword, accountEntity.HashPassword)) {
-                    return _jwtQueryService.GetJwtToken(accountEntity.Username, accountEntity.Id);
+                    return new ResponseLoginModel()
+                    {
+                        Token = _jwtQueryService.GetJwtToken(accountEntity.Username, accountEntity.Id),
+                        IsAdmin = accountEntity.IsAdmin,
+
+                    };
                 }
 
-                return string.Empty;
+                return null;
             }
             catch (Exception) {
                 throw;

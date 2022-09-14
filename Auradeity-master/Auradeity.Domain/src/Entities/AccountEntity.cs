@@ -18,6 +18,9 @@ namespace Auradeity.Domain.Entities {
 
         [Column("hash_password")]
         public byte[] HashPassword { get; set; }
+
+        [Column("role")]
+        public bool? IsAdmin { get; set; }
     }
 
 }
